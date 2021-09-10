@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <div class="main_header"></div>
+    <div class="main_header">添加内容</div>
     <div class="side">
       <div class="side_left"></div>
       <div class="side_right">
