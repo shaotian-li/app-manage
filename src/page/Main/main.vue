@@ -1,26 +1,34 @@
 <template>
   <div class="main">
-    <div class="main_header">添加内容</div>
+    <div class="main_header">
+      <Header />
+    </div>
     <div class="side">
-      <div class="side_left"></div>
+      <div class="side_left">
+        <side-bar />
+      </div>
       <div class="side_right">
-        <div class="side_header"></div>
-        <div class="container">
-          <transition>
-            <router-view></router-view>
-          </transition>
-        </div>
+        <Main />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import Header from '@com/Header.vue'; // header
+import SideBar from '@com/SideBar.vue'; // 侧边栏
+import Main from '@com/Main.vue'; // 主题内容
+
 export default {
   data() {
     return {
       name: '222',
     };
+  },
+  components: {
+    Header,
+    SideBar,
+    Main,
   },
   created() {
     console.log('进来');
@@ -32,13 +40,14 @@ export default {
 
 <style lang="less">
 .main {
-  width: 100%;
+  min-width: 1380px;
   height: 100%;
+  overflow: auto;
 }
 .main_header {
   width: 100%;
   height: 50px;
-  background-color: yellow;
+  background-color: #4760f3;
 }
 .side {
   width: 100%;
@@ -54,11 +63,6 @@ export default {
 .side_right {
   flex: 1;
   height: 100%;
-  background-color: blue;
-}
-.side_header {
-  width: 100%;
-  height: 50px;
-  background-color: red;
+  background-color: #4760f3;
 }
 </style>
